@@ -43,7 +43,7 @@ namespace API.Models
         /* **********************************************
          * Relacionamentos 1-N
          * ********************************************** */
-        
+
         /// <summary>
         /// FK para a Categoria da fotografia
         /// </summary>
@@ -68,3 +68,4 @@ namespace API.Models
 
         /* ********************************************** */
     }
+}
