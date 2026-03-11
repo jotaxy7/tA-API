@@ -16,7 +16,10 @@ namespace API.Models
         /// <summary>
         /// Nome da categoria
         /// </summary>
-        public string Name { get; set; }
+        [StringLength(30)]
+        [Display(Name = "Nome da Categoria")]
+        [Required(ErrorMessage = "{0} é de preenchimento obrigatório.")]
+        public string Name { get; set; } = null!;
 
         /* **********************************************
          * Relacionamentos 1-N
@@ -25,7 +28,7 @@ namespace API.Models
         /// <summary>
         /// Lista de fotos que uma categoria tem
         /// </summary>
-        public ICollection<Photography> ListOfPhotos { get; set; }
+        public ICollection<Photography> ListOfPhotos { get; set; } = [];
         /* ********************************************** */
         
     }
