@@ -1,4 +1,6 @@
-﻿namespace API.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace API.Models
 {
     /// <summary>
     /// Dados dos clientes da loja
@@ -8,6 +10,7 @@
         /// <summary>
         /// PK
         /// </summary>
+        [Key]
         public int Id { get; set; }
 
         /// <summary>
@@ -39,5 +42,14 @@
         /// Número de telémovel do cliente
         /// </summary>
         public string CellPhone { get; set; }
+
+        /* **********************************************
+         * Relacionamentos 1-N
+         * ********************************************** */
+
+        /// <summary>
+        /// Lista de compras de fotografias efetuadas pelo cliente
+        /// </summary>
+        public ICollection<Purchase> ListOfPurchase { get; set; }
     }
 }
